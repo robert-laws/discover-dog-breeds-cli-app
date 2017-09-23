@@ -1,7 +1,7 @@
 class DiscoverDogBreeds::Scrape
   URL = "http://www.akc.org/dog-breeds"
 
-  def get_dogs_by_letter(letter)
+  def get_dog_list_by_letter(letter)
     result = get_html("?letter=#{letter}", "az_search")
     result.collect { |dog| dog.css('.scale-contents h2 a').text }[0..-2]
   end
