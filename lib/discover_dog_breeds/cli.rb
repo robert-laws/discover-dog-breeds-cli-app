@@ -14,7 +14,7 @@ class DiscoverDogBreeds::CLI
     puts ""
     p choose_letter
 
-
+    
   end
 
   def choose_letter
@@ -30,4 +30,6 @@ class DiscoverDogBreeds::CLI
     input.match(/^[a-zA-Z]{1}$/i) ? letter = input.upcase : choose_letter
     @count = 0
   end
+
+
 end
