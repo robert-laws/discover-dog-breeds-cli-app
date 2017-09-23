@@ -1,5 +1,4 @@
-require "discover_dog_breeds/version"
-
-module DiscoverDogBreeds
-  # Your code goes here...
+module DogBreeds
 end
+
+require_relative '../config/environment'
