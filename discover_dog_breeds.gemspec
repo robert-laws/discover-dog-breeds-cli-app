@@ -2,7 +2,7 @@ require_relative './lib/discover_dog_breeds/version'
 
 Gem::Specification.new do |s|
   s.name        = 'discover-dog-breeds'
-  s.version     = DogBreeds::VERSION
+  s.version     = DiscoverDogBreeds::VERSION
   s.date        = '2017-09-23'
   s.summary     = "Discover Dog Breeds"
   s.description = "Find names of dog breeds and read detailed information about each breed."
