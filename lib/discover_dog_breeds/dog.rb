@@ -1,6 +1,8 @@
 class DiscoverDogBreeds::Dog
   attr_accessor :name, :personality, :energy, :with_children, :with_dogs, :shedding, :grooming, :trainability, :height_male, :height_female, :weight_male, :weight_female, :life, :barking
 
+  @@all = []
+
   def self.create_new_from_details(name, details)
     n = name.split("-").each { |w| w.capitalize! }.join(" ")
     p = details[0]
