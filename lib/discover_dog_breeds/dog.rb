@@ -1,9 +1,12 @@
+require 'pry'
+
 class DiscoverDogBreeds::Dog
   attr_accessor :name, :personality, :energy, :with_children, :with_dogs, :shedding, :grooming, :trainability, :height_male, :height_female, :weight_male, :weight_female, :life, :barking
 
   @@all = []
 
   def self.create_new_from_details(name, details)
+    binding.pry
     n = name.split("-").each { |w| w.capitalize! }.join(" ")
     p = details[0]
     e = details[1]
@@ -13,11 +16,12 @@ class DiscoverDogBreeds::Dog
     g = details[5]
     t = details[6]
     hm = details[7].split(",").count == 2 ? details[7].split(",")[0] : details[7]
-    hf = details[7].split(",").count == 2 ? details[7].split(",")[0] : details[7]
-    wm = details[8].split(",").count == 2 ? details[8].split(",")[1] : details[8]
+    hf = details[7].split(",").count == 2 ? details[7].split(",")[1] : details[7]
+    wm = details[8].split(",").count == 2 ? details[8].split(",")[0] : details[8]
     wf = details[8].split(",").count == 2 ? details[8].split(",")[1] : details[8]
     l = details[9]
     b = details[10]
+    # binding.pry
     self.new(n, p, e, wc, wd, s, g, t, hm, hf, wm, wf, l, b)
   end
 

@@ -1,3 +1,5 @@
+require 'pry'
+
 class DiscoverDogBreeds::CLI
   attr_accessor :count
 
@@ -25,10 +27,9 @@ class DiscoverDogBreeds::CLI
     if dog_details.count == 0
       puts "No details for the dog you choose. Please search for another dog breed"
       start
+    else
+      dog = DiscoverDogBreeds::Dog.create_new_from_details(dog_name, dog_details)
     end
-
-    dog = DiscoverDogBreeds::Dog.create_new_from_details(dog_name, dog_details)
-
   end
 
   def choose_letter
