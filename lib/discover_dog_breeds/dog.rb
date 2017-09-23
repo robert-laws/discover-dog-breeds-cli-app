@@ -6,7 +6,6 @@ class DiscoverDogBreeds::Dog
   @@all = []
 
   def self.create_new_from_details(name, details)
-    binding.pry
     n = name.split("-").each { |w| w.capitalize! }.join(" ")
     p = details[0]
     e = details[1]
@@ -15,10 +14,10 @@ class DiscoverDogBreeds::Dog
     s = details[4]
     g = details[5]
     t = details[6]
-    hm = details[7].split(",").count == 2 ? details[7].split(",")[0] : details[7]
-    hf = details[7].split(",").count == 2 ? details[7].split(",")[1] : details[7]
-    wm = details[8].split(",").count == 2 ? details[8].split(",")[0] : details[8]
-    wf = details[8].split(",").count == 2 ? details[8].split(",")[1] : details[8]
+    hm = details[7].split(",").count == 2 ? details[7].split(",")[0].strip : details[7].strip
+    hf = details[7].split(",").count == 2 ? details[7].split(",")[1].strip : details[7].strip
+    wm = details[8].split(",").count == 2 ? details[8].split(",")[0].strip : details[8].strip
+    wf = details[8].split(",").count == 2 ? details[8].split(",")[1].strip : details[8].strip
     l = details[9]
     b = details[10]
     # binding.pry

@@ -29,6 +29,7 @@ class DiscoverDogBreeds::CLI
       start
     else
       dog = DiscoverDogBreeds::Dog.create_new_from_details(dog_name, dog_details)
+      display_dog_details(dog)
     end
   end
 
@@ -72,5 +73,27 @@ class DiscoverDogBreeds::CLI
     list.each_with_index do |dog_name, index|
       puts "#{index.to_i + 1}. #{dog_name}"
     end
+  end
+
+  def display_dog_details(dog)
+    puts "------------ Details for #{dog.name} ------------"
+
+    # display dog details
+    puts "Name:                  #{dog.name}"
+    puts "Personality:           #{dog.personality}"
+    puts "Energy Level:          #{dog.energy}"
+    puts "Good with Children:    #{dog.with_children}"
+    puts "Good with other dogs:  #{dog.with_dogs}"
+    puts "Shedding:              #{dog.shedding}"
+    puts "Grooming:              #{dog.grooming}"
+    puts "Trainability:          #{dog.trainability}"
+    puts "Barking Level:         #{dog.barking}"
+    puts ""
+    puts "---------------- #{dog.name} Stats ---------------"
+    puts "Height Male:           #{dog.height_male}"
+    puts "Height Female:         #{dog.height_female}"
+    puts "Weight Male:           #{dog.weight_male}"
+    puts "Weight Female:         #{dog.weight_female}"
+    puts "Life Expectancy:       #{dog.life}"
   end
 end
