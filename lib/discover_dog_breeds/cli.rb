@@ -18,9 +18,16 @@ class DiscoverDogBreeds::CLI
     display_dog_list(letter, dog_list)
 
     puts ""
-    choice = choose_dog(dog_list)
+    dog_choice = choose_dog(dog_list)
 
-    dog_details = DiscoverDogBreeds::Scrape.new.get_dog_details_by_name(choice)
+    dog_details = DiscoverDogBreeds::Scrape.new.get_dog_details_by_name(dog_choice)
+    
+    if dog_details.count == 0
+      puts "No details for the dog you choose. Please search for another dog breed"
+      start
+    end
+
+    dog = DiscoverDogBreeds::Dog.create_new_from_details(dog_choice, dog_details)
 
   end
 
