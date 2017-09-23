@@ -1,8 +1,11 @@
 class DiscoverDogBreeds::CLI
 
   def call
-    puts "hello there"
+    puts "Welcome to the discover dog breeds app. With this tool you can view names of dog breeds and read more information about a selected breed."
+    start
   end
 
-  DiscoverDogBreeds::Scrape.new.say_hello
+  def start
+
+  end
 end
