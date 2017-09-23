@@ -5,6 +5,10 @@ class DiscoverDogBreeds::Dog
 
   @@all = []
 
+  def self.all
+    @@all
+  end
+
   def self.create_new_from_details(name, details)
     n = name.split("-").each { |w| w.capitalize! }.join(" ")
     p = details[0]

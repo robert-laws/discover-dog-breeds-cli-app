@@ -17,26 +17,32 @@ class DiscoverDogBreeds::CLI
     letter = choose_letter
 
     dog_list = DiscoverDogBreeds::Scrape.new.get_dog_list_by_letter(letter)
-    display_dog_list(letter, dog_list)
 
-    puts ""
-    dog_name = choose_dog(dog_list)
-
-    dog_details = DiscoverDogBreeds::Scrape.new.get_dog_details_by_name(dog_name)
-    
-    if dog_details.count == 0
-      puts "No details for the dog you choose. Please search for another dog breed"
+    if dog_list.count == 0
+      puts "No dogs are listed under letter #{letter}. Please choose another letter."
       start
     else
-      dog = DiscoverDogBreeds::Dog.create_new_from_details(dog_name, dog_details)
-      display_dog_details(dog)
+      display_dog_list(letter, dog_list)
 
       puts ""
-      answer = view_again?
-      if answer == "yes"
+      dog_name = choose_dog(dog_list)
+  
+      dog_details = DiscoverDogBreeds::Scrape.new.get_dog_details_by_name(dog_name)
+      
+      if dog_details.count == 0
+        puts "No details for the dog you choose. Please search for another dog breed"
         start
       else
-        exit
+        dog = DiscoverDogBreeds::Dog.create_new_from_details(dog_name, dog_details)
+        display_dog_details(dog)
+  
+        puts ""
+        answer = view_again?
+        if answer == "yes"
+          start
+        else
+          exit
+        end
       end
     end
   end
@@ -130,5 +136,12 @@ class DiscoverDogBreeds::CLI
 
   def exit
     puts "Thank you for using the Discover Dog Breed App"
+    puts "Here are all the dog breeds you viewed during this session"
+    puts ""
+
+    dogs_viewed = DiscoverDogBreeds::Dog.all
+    dogs_viewed.each_with_index do |dog, index|
+      puts "#{index.to_i + 1}. #{dog.name}"
+    end
   end
 end
