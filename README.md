@@ -1,30 +1,16 @@
 # Discover Dog Breeds
 
-RubyGem for the Discover Dog Breeds gem
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/discover_dog_breeds`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This app allows the user to discover more information about different breeds of dogs. The app allows users to view lists of dog breeds from A to Z. From the lists, the user can select a particular dog breed to view further information. The information comes from the American Kennel Club's website about dog breeds. The app keeps track of the breeds viewed and displays that list to the user upon exiting the app.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+To install it yourself as:
 
-```ruby
-gem 'discover_dog_breeds'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install discover_dog_breeds
+``$ gem install discover-dog-breeds``
 
 ## Usage
 
-TODO: Write usage instructions here
+To use the app, after installation type ``discover-dog-breeds`` from a terminal or command prompt. The app asks the user to enter a letter from A to Z. After entering a letter a list of dog breeds for that letter is shown. If none exist for a letter the user is notified and asked to make another selection. After finding a list of dog breeds, the user has an opportunity to view more details by typing the number that corresponds to the list position of a particular dog breed. The details are displayed and the user has an opportunity to continue to select more dog breeds to view or to exit the app. The app will display a list of dog breeds viewed upon exiting.
 
 ## Development
 
@@ -34,7 +20,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/discover_dog_breeds. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/robert-laws/discover_dog_breeds. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -42,4 +28,4 @@ The gem is available as open source under the terms of the [MIT License](http://
 
 ## Code of Conduct
 
-Everyone interacting in the DiscoverDogBreeds project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/discover_dog_breeds/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the DiscoverDogBreeds project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/robert-laws/discover_dog_breeds/blob/master/CODE_OF_CONDUCT.md).
