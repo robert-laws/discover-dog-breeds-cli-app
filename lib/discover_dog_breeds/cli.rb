@@ -30,6 +30,14 @@ class DiscoverDogBreeds::CLI
     else
       dog = DiscoverDogBreeds::Dog.create_new_from_details(dog_name, dog_details)
       display_dog_details(dog)
+
+      puts ""
+      answer = view_again?
+      if answer == "yes"
+        start
+      else
+        exit
+      end
     end
   end
 
@@ -95,5 +103,32 @@ class DiscoverDogBreeds::CLI
     puts "Weight Male:           #{dog.weight_male}"
     puts "Weight Female:         #{dog.weight_female}"
     puts "Life Expectancy:       #{dog.life}"
+  end
+
+  def view_again?
+    answer = nil
+    if @count > 0
+      puts "You did not select either Y or N"
+    end
+
+    @count += 1
+    puts "Do you want to search for another dog breed? Enter Y or N"
+    input = gets.strip.downcase
+
+    if input == "y"
+      answer = "yes"
+      @count = 0
+    elsif input == "n"
+      answer = "no"
+      @count = 0
+    else
+      view_again?
+    end
+
+    answer
+  end
+
+  def exit
+    puts "Thank you for using the Discover Dog Breed App"
   end
 end
