@@ -2,4 +2,4 @@
 
 require_relative '../lib/discover_dog_breeds'
 
-DogBreeds::CLI.new.call
+DiscoverDogBreeds::CLI.new.call

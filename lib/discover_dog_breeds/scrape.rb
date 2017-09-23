@@ -1,0 +1,3 @@
+class DiscoverDogBreeds::Scrape
+
+end
