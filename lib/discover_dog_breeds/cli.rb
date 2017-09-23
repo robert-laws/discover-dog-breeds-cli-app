@@ -19,6 +19,9 @@ class DiscoverDogBreeds::CLI
 
     puts ""
     choice = choose_dog(dog_list)
+
+    dog_details = DiscoverDogBreeds::Scrape.new.get_dog_details_by_name(choice)
+
   end
 
   def choose_letter
